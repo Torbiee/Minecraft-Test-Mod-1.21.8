@@ -1,5 +1,7 @@
 {
   "item.testmod.cut_cheese": "Cut Cheese",
   "item.testmod.raw_cheese": "Raw Cheese",
-  "item.testmod.cheese_block": "Block of Cheese"
+
+  "item.testmod.cheese_block": "Block of Cheese",
+  "item.testmod.cheese_ore": "Cheese Ore"
 }

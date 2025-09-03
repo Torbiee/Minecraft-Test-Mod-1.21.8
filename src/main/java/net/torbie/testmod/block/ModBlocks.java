@@ -20,6 +20,9 @@ public class ModBlocks {
             AbstractBlock.Settings.create().strength(3f, 4f)
                     .sounds(BlockSoundGroup.MUD));
 
+    public static final Block CHEESE_ORE = registerBlock("cheese_ore",
+            AbstractBlock.Settings.create().strength(2f, 2f).sounds(BlockSoundGroup.MUD));
+
 
     private static Block registerBlock(String name, AbstractBlock.Settings blockSettings) {
         RegistryKey <Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TestMod.MOD_ID,name));
@@ -42,6 +45,7 @@ public class ModBlocks {
         TestMod.LOGGER.info("Registering Mod Blocks for " + TestMod.MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(CHEESE_BLOCK);
+            entries.add(CHEESE_ORE);
         });
     };
 }
