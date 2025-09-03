@@ -1,7 +1,10 @@
 {
-  "item.testmod.cut_cheese": "Cut Cheese",
   "item.testmod.raw_cheese": "Raw Cheese",
+  "item.testmod.cheese": "Cheese",
 
   "item.testmod.cheese_block": "Block of Cheese",
-  "item.testmod.cheese_ore": "Cheese Ore"
+  "item.testmod.cheese_ore": "Cheese Ore",
+  "item.testmod.deepslate_cheese_ore": "Deepslate Cheese Ore",
+  "itemgroup.testmod.cheese_items": "Cheese Items",
+  "itemgroup.testmod.cheese_blocks": "Cheese Blocks"
 }

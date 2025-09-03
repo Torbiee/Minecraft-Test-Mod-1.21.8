@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": "testmod:raw_cheese",
+  "result": {
+    "id": "testmod:cheese"
+  },
+  "experience": 0.5,
+  "cookingtime": 100
+}

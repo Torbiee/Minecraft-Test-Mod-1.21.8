@@ -11,23 +11,27 @@ import net.minecraft.util.Identifier;
 import net.torbie.testmod.TestMod;
 
 public class ModItems {
-    public static final Item CUT_CHEESE = registerItem( "cut_cheese");
-    public static final Item RAW_CHEESE = registerItem("raw_cheese");
+    public static Item RAW_CHEESE;
+    public static Item CHEESE;
 
 
     private static Item registerItem(String name) {
-        Item.Settings itemSettings = new Item.Settings()
-                .registryKey(RegistryKey.of(RegistryKeys.ITEM,Identifier.of(TestMod.MOD_ID,name)));
-        Item item = new Item(itemSettings);
-        return Registry.register(Registries.ITEM, Identifier.of(TestMod.MOD_ID, name), item);
+        Identifier id = Identifier.of(TestMod.MOD_ID, name);
+        Item.Settings settings = new Item.Settings()
+                .registryKey(RegistryKey.of(RegistryKeys.ITEM, id));
+        return Registry.register(Registries.ITEM, id, new Item(settings));
+
     }
 
     public static void registerModItems() {
         TestMod.LOGGER.info("Registering Mod Items for " + TestMod.MOD_ID);
 
+        RAW_CHEESE = registerItem("raw_cheese");
+        CHEESE = registerItem("cheese");
+
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            entries.add(CUT_CHEESE);
             entries.add(RAW_CHEESE);
+            entries.add(CHEESE);
         });
     }
 }
