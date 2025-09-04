@@ -14,9 +14,11 @@ public class TestMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-        ModItems.registerModItems();
+        ModItems.initialize();
         ModBlocks.registerModBlocks();
-        ModItemGroups.registerItemGroups();
+        ModItemGroups.initialize();
+
 
 	}
+
 }

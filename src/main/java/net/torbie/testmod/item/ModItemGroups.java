@@ -1,10 +1,14 @@
 package net.torbie.testmod.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.torbie.testmod.TestMod;
@@ -13,31 +17,46 @@ import net.torbie.testmod.block.ModBlocks;
 
 public class ModItemGroups {
 
-    public static final ItemGroup CHEESE_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(TestMod.MOD_ID, "cheese_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.CHEESE))
-                    .displayName(Text.translatable("itemgroup.testmod.cheese_items"))
-                    .entries((displayContext, entries) -> {
-                        entries.add(ModItems.RAW_CHEESE);
-                        entries.add(ModItems.CHEESE);
-                    })
+    public static void initialize() {
 
-                    .build());
-    public static final ItemGroup CHEESE_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(TestMod.MOD_ID, "cheese_blocks"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.CHEESE_ORE))
-                    .displayName(Text.translatable("itemgroup.testmod.cheese_blocks"))
-                    .entries((displayContext, entries) -> {
-                        entries.add(ModBlocks.CHEESE_BLOCK);
-                        entries.add(ModBlocks.CHEESE_ORE);
-                        entries.add(ModBlocks.DEEPSLATE_CHEESE_ORE);
-                    })
+        //Registering Custom Item Groups
+        Registry.register(Registries.ITEM_GROUP, CUSTOM_ITEM_GROUP_KEY, CUSTOM_ITEM_GROUP);
 
-                    .build());
+        ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(ModItems.CHEESE);
+            itemGroup.add(ModItems.RAW_CHEESE);
+            itemGroup.add(ModItems.CHEESE_SWORD);
+        });
 
+        // Registering Custom Block Group
+        Registry.register(Registries.ITEM_GROUP, CUSTOM_BLOCK_GROUP_KEY, CUSTOM_BLOCK_GROUP);
 
-
-
-
-    public static void registerItemGroups() {
-        TestMod.LOGGER.info("Registering Item Groups for " + TestMod.MOD_ID);
+        ItemGroupEvents.modifyEntriesEvent(CUSTOM_BLOCK_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(ModBlocks.CHEESE_ORE);
+            itemGroup.add(ModBlocks.CHEESE_BLOCK);
+            itemGroup.add(ModBlocks.DEEPSLATE_CHEESE_ORE);
+        });
     }
+
+    // Creating an item class to store the item group and registry key for it
+    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
+            RegistryKey.of(Registries.ITEM_GROUP.getKey(),
+            Identifier.of(TestMod.MOD_ID, "item_group"));
+    public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.CHEESE))
+            .displayName(Text.translatable("itemGroup.cheese_items"))
+            .build();
+
+    public static final RegistryKey<ItemGroup> CUSTOM_BLOCK_GROUP_KEY =
+            RegistryKey.of(Registries.ITEM_GROUP.getKey(),
+                    Identifier.of(TestMod.MOD_ID, "block_group"));
+    public static final ItemGroup CUSTOM_BLOCK_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModBlocks.CHEESE_ORE))
+            .displayName(Text.translatable("itemGroup.cheese_blocks"))
+            .build();
+
+
+
+
+
 }
