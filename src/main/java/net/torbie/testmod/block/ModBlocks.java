@@ -16,109 +16,69 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.torbie.testmod.TestMod;
 
+import java.util.function.Function;
+
+import static net.minecraft.util.math.intprovider.UniformIntProvider.*;
+
 public class ModBlocks {
 
-    public static Block CHEESE_BLOCK;
-    public static Block CHEESE_ORE;
-    public static Block DEEPSLATE_CHEESE_ORE;
-
-    private static Block registerBlock(String name, Block block) {
-        Identifier id = Identifier.of(TestMod.MOD_ID, name);
-        Block registeredBlock = Registry.register(Registries.BLOCK, id, block);
-        Item.Settings itemSettings = new Item.Settings()
-                .registryKey(RegistryKey.of(RegistryKeys.ITEM, id));
-        Registry.register(Registries.ITEM, id, new BlockItem(registeredBlock, itemSettings));
-
-        return registeredBlock;
+    public static void initialize() {
     }
 
-    public static void registerModBlocks() {
-        TestMod.LOGGER.info("Registering Mod Blocks for " + TestMod.MOD_ID);
+    private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory,AbstractBlock.Settings settings,boolean shouldRegisterItem) {
+        // Create Registry Key for block
+        RegistryKey<Block> blockKey = keyOfBlock(name);
+        //Create Block Instance
+        Block block = blockFactory.apply(settings.registryKey(blockKey));
 
+        //Fail-safe incase don't want to register an item for the block
+        if (shouldRegisterItem) {
+            //registered items need to be a different key but ID can be the same
+            RegistryKey<Item> itemKey = keyOfItem(name);
 
-            CHEESE_BLOCK = registerBlock("cheese_block",
-                    new Block(AbstractBlock.Settings.create()
-                            .strength(3f,4f)
-                            .requiresTool()
-                            .sounds(BlockSoundGroup.MUD)
-                            .registryKey(RegistryKey.of(Registries.BLOCK.getKey(), Identifier.of(TestMod.MOD_ID, "cheese_block")))));
+            BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemKey));
+            Registry.register(Registries.ITEM, itemKey, blockItem);
+        }
 
-            CHEESE_ORE = registerBlock("cheese_ore",
-                    new ExperienceDroppingBlock(
-                            UniformIntProvider.create(2,5),
-                            AbstractBlock.Settings.create()
-                                    .strength(2f)
-                                    .requiresTool()
-                                    .sounds(BlockSoundGroup.STONE)
-                                    .registryKey(RegistryKey.of(Registries.BLOCK.getKey(), Identifier.of(TestMod.MOD_ID, "cheese_ore")))));
-
-            DEEPSLATE_CHEESE_ORE = registerBlock("deepslate_cheese_ore",
-                    new ExperienceDroppingBlock(
-                            UniformIntProvider.create(3,6),
-                            AbstractBlock.Settings.create()
-                                    .strength(3f)
-                                    .requiresTool()
-                                    .sounds(BlockSoundGroup.DEEPSLATE)
-                                    .registryKey(RegistryKey.of(Registries.BLOCK.getKey(), Identifier.of(TestMod.MOD_ID, "deepslate_cheese_ore")))));
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(CHEESE_BLOCK);
-            entries.add(CHEESE_ORE);
-            entries.add(DEEPSLATE_CHEESE_ORE);
-        });
+        return Registry.register(Registries.BLOCK, blockKey, block);
     }
 
+    private static RegistryKey<Block> keyOfBlock(String name) {
+        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TestMod.MOD_ID, name));
+    }
+
+    private static RegistryKey<Item> keyOfItem(String name) {
+        return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TestMod.MOD_ID, name));
+    }
+
+    public static final Block CHEESE_BLOCK = registerBlock(
+            "cheese_block",
+            Block::new,
+            AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.MUD)
+                    .strength(3f, 4f)
+                    .requiresTool(),
+            true
+    );
+    public static final Block CHEESE_ORE = registerBlock(
+            "cheese_ore",
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(2,5), settings),
+            AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.STONE)
+                    .strength(2f)
+                    .requiresTool(),
+            true
+    );
+    public static final Block DEEPSLATE_CHEESE_ORE = registerBlock(
+            "deepslate_cheese_ore",
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(3,6), settings),
+            AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.DEEPSLATE)
+                    .strength(3f)
+                    .requiresTool(),
+            true
+    );
 
 
-
-
-    //    public static final Block CHEESE_BLOCK = registerBlock(
-//            "cheese_block",
-//            new Block(AbstractBlock.Settings.create()
-//                    .strength(3f, 4f)
-//                    .requiresTool()
-//                    .sounds(BlockSoundGroup.MUD)));
-//
-//    public static final Block CHEESE_ORE = registerBlock(
-//            "cheese_ore",
-//            new ExperienceDroppingBlock(
-//                    UniformIntProvider.create(2, 5),
-//                    AbstractBlock.Settings.create()
-//                            .strength(2f)
-//                            .requiresTool()
-//                            .sounds(BlockSoundGroup.MUD)));
-//
-//    public static final Block DEEPSLATE_CHEESE_ORE = registerBlock(
-//            "deepslate_cheese_ore",
-//            new ExperienceDroppingBlock(
-//                    UniformIntProvider.create(0, 2),
-//                    AbstractBlock.Settings.create()
-//                            .strength(3f)
-//                            .requiresTool()
-//                            .sounds(BlockSoundGroup.MUD)));
-//
-//    private static Block registerBlock(String name, Block block) {
-//        Identifier id = Identifier.of(TestMod.MOD_ID, name);
-//        Registry.register(Registries.BLOCK, id, block);
-//        registerBlockItem(id, block);
-//        return block;
-//    }
-//
-//    private static void registerBlockItem(Identifier id, Block block) {
-//        BlockItem item = new BlockItem(block, new Item.Settings());
-//        Registry.register(Registries.ITEM, id, item);
-//    }
-//
-//
-//
-//
-//
-//    public static void registerModBlocks() {
-//        TestMod.LOGGER.info("Registering Mod Blocks for " + TestMod.MOD_ID);
-//        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-//            entries.add(CHEESE_BLOCK);
-//            entries.add(CHEESE_ORE);
-//            entries.add(DEEPSLATE_CHEESE_ORE);
-//        });
-//    };
 }
+
