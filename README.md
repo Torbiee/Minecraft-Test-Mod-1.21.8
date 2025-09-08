@@ -1,0 +1,1 @@
+This is my first time modding in minecraft. I am following the [Fabric Developer Documentation Guide](https://docs.fabricmc.net/) and this Youtube tutorial by ["Modding by KaupenJoe"](https://www.youtube.com/watch?v=oU8-qV-ZtUY&list=PLKGarocXCE1H_HxOYihQMq0mlpqiUJj4L&index=1)
