@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "testmod:cheese",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "CC ",
+    "CS ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "testmod:cheese_axe"
+  }
+}

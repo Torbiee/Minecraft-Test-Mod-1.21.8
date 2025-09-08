@@ -1,3 +1,8 @@
 {
-  "values": []
+  "values": [
+    "#minecraft:incorrect_for_diamond_tool"
+  ],
+  "remove": [
+    "#testmod:needs_cheese_tool"
+  ]
 }

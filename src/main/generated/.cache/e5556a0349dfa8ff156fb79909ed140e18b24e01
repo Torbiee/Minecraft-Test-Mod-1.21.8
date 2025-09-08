@@ -1,0 +1,4 @@
+// 1.21.8	-999999999-01-01T00:00:00	Test Mod/Block Loot Tables
+46274418d01b2482b55c9fb072fad5fea8fc1bc0 data/testmod/loot_table/blocks/cheese_block.json
+efc2fb10b3d8210901a1744989827651f0700b87 data/testmod/loot_table/blocks/cheese_ore.json
+60e4794e98c6b5d832a7c838a76e60eeee1ec050 data/testmod/loot_table/blocks/deepslate_cheese_ore.json

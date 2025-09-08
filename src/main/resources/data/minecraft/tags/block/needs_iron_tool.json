@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "testmod:cheese_block",
-    "testmod:cheese_ore",
-    "testmod:deepslate_cheese_ore"
-  ]
-}

@@ -26,6 +26,10 @@ public class ModItemGroups {
             itemGroup.add(ModItems.CHEESE);
             itemGroup.add(ModItems.RAW_CHEESE);
             itemGroup.add(ModItems.CHEESE_SWORD);
+            itemGroup.add(ModItems.CHEESE_PICKAXE);
+            itemGroup.add(ModItems.CHEESE_AXE);
+            itemGroup.add(ModItems.CHEESE_SHOVEL);
+            itemGroup.add(ModItems.CHEESE_HOE);
             itemGroup.add(ModItems.CHEESE_HELMET);
             itemGroup.add(ModItems.CHEESE_CHESTPLATE);
             itemGroup.add(ModItems.CHEESE_LEGGINGS);

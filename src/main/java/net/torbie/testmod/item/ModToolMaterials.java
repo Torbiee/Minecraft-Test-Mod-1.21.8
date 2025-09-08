@@ -7,8 +7,8 @@ public class ModToolMaterials {
     public static ToolMaterial CHEESE = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_CHEESE_TOOL,
             1561,
             8.0f,
-            3.0f,
-            10,
+           3.0f,
+           22,
             ModTags.Items.CHEESE_REPAIR_ITEMS);
 }
 

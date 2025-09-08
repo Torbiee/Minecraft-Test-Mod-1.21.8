@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-
-    "all": "testmod:block/deepslate_cheese_ore"
-  }
-}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "group": "cheese",
+  "ingredient": "testmod:deepslate_cheese_ore",
+  "result": {
+    "id": "testmod:cheese"
+  }
+}
