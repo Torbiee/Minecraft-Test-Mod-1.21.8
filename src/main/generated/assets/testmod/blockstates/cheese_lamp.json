@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "testmod:block/cheese_lamp"
+    },
+    "clicked=true": {
+      "model": "testmod:block/cheese_lamp_on"
+    }
+  }
+}

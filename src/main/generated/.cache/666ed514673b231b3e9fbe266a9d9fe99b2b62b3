@@ -1,11 +1,14 @@
 // 1.21.8	-999999999-01-01T00:00:00	Test Mod/Tags for minecraft:item
 7803732a9deb199c0f0a3b105550689469280e17 data/minecraft/tags/item/axes.json
 61a0ab00c05107039f47494d471d84ded8bee37b data/minecraft/tags/item/chest_armor.json
+a5c4d83b891849ba8edd31fc49171af4b7c52663 data/minecraft/tags/item/flowers.json
 90c6c7ab6dabd1fc2ea6da3f3161c5d6b4dba633 data/minecraft/tags/item/foot_armor.json
 f9db9fdae5923903dcd105d13097b0aaddf278e9 data/minecraft/tags/item/head_armor.json
 3f172d19f900d3e34d2bd6222a124c3394e8fd7e data/minecraft/tags/item/hoes.json
 07cc9dbc95da121f4d253ab96be70b17d6f41755 data/minecraft/tags/item/leg_armor.json
+b4da6cb806f2e3009d7b9725e5b7fcaea35955ce data/minecraft/tags/item/logs_that_burn.json
 f90b2fac028ec1c7ea0ee4a08cb2e4961ac35ec0 data/minecraft/tags/item/pickaxes.json
+a3d8b7f081d78a068b71a62c90a265ca6fe5ce9d data/minecraft/tags/item/planks.json
 368ee7efb04a23fe841187db95b2b01686636c09 data/minecraft/tags/item/shovels.json
 ce8db00ec8de47e6a9b6d4a235f395ef37e674b0 data/minecraft/tags/item/swords.json
 c308f75a2d22adff8fc2a16d6eae80766057df97 data/testmod/tags/item/cheese_repair_items.json

@@ -1,4 +1,7 @@
 // 1.21.8	-999999999-01-01T00:00:00	Test Mod/Tags for minecraft:block
+a5c4d83b891849ba8edd31fc49171af4b7c52663 data/minecraft/tags/block/bee_attractive.json
+a5c4d83b891849ba8edd31fc49171af4b7c52663 data/minecraft/tags/block/flowers.json
+b4da6cb806f2e3009d7b9725e5b7fcaea35955ce data/minecraft/tags/block/logs_that_burn.json
 edbf2911f17dbe779a25a36872fc37632a1c1e40 data/minecraft/tags/block/mineable/pickaxe.json
 26d89c4e3cfa827f5d2a7ef1ef43ec4c8c63cd6e data/minecraft/tags/block/needs_diamond_tool.json
 5615fbc3ad58d062b20849692fd37ec29beec7ec data/minecraft/tags/block/needs_iron_tool.json

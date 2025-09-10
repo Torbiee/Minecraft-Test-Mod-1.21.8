@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:redstone",
+    "R": "testmod:cheese"
+  },
+  "pattern": [
+    "RRR",
+    "RAR",
+    "RRR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "testmod:cheese_lamp"
+  }
+}

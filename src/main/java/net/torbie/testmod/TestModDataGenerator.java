@@ -2,7 +2,11 @@ package net.torbie.testmod;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 import net.torbie.testmod.datagen.*;
+import net.torbie.testmod.world.ModConfiguredFeatures;
+import net.torbie.testmod.world.ModPlacedFeatures;
 
 public class TestModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -14,5 +18,12 @@ public class TestModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModLootTableProvider::new);
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModRecipeProvider::new);
+        pack.addProvider(ModRegistryDataGenerator::new);
 	}
+
+    @Override
+    public void buildRegistry(RegistryBuilder registryBuilder) {
+        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+    }
 }

@@ -2,9 +2,7 @@ package net.torbie.testmod.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -43,9 +41,20 @@ public class ModItemGroups {
             itemGroup.add(ModBlocks.CHEESE_ORE);
             itemGroup.add(ModBlocks.CHEESE_BLOCK);
             itemGroup.add(ModBlocks.DEEPSLATE_CHEESE_ORE);
+
+            itemGroup.add(ModBlocks.CHEESE_LAMP);
+
+            itemGroup.add(ModBlocks.CHEESE_WOOD_LOG);
+            itemGroup.add(ModBlocks.CHEESE_WOOD_WOOD);
+            itemGroup.add(ModBlocks.STRIPPED_CHEESE_WOOD_LOG);
+            itemGroup.add(ModBlocks.STRIPPED_CHEESE_WOOD_WOOD);
+            itemGroup.add(ModBlocks.CHEESE_WOOD_PLANKS);
+            itemGroup.add(ModBlocks.CHEESE_WOOD_LEAVES);
+            itemGroup.add(ModBlocks.CHEESE_WOOD_SAPLING);
+
+            itemGroup.add(ModBlocks.CHEESE_FLOWER);
         });
     }
-
     // Creating an item class to store the item group and registry key for it
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
             RegistryKey.of(Registries.ITEM_GROUP.getKey(),
@@ -62,9 +71,4 @@ public class ModItemGroups {
             .icon(() -> new ItemStack(ModBlocks.CHEESE_ORE))
             .displayName(Text.translatable("itemGroup.cheese_blocks"))
             .build();
-
-
-
-
-
 }

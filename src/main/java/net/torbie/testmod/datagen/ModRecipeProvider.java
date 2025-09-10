@@ -8,6 +8,7 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 import net.torbie.testmod.block.ModBlocks;
 import net.torbie.testmod.item.ModItems;
 
@@ -37,10 +38,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.CHEESE), conditionsFromItem(ModItems.CHEESE))
                         .offerTo(exporter);
 
+                createShaped(RecipeCategory.MISC, ModBlocks.CHEESE_LAMP, 1)
+                        .pattern("RRR")
+                        .pattern("RAR")
+                        .pattern("RRR")
+                        .input('R', ModItems.CHEESE)
+                        .input('A', Items.REDSTONE)
+                        .criterion(hasItem(ModItems.CHEESE), conditionsFromItem(ModItems.CHEESE))
+                        .offerTo(exporter);
+
                 createShapeless(RecipeCategory.MISC, ModItems.CHEESE, 9)
                         .input(ModBlocks.CHEESE_BLOCK)
                         .criterion(hasItem(ModBlocks.CHEESE_BLOCK), conditionsFromItem(ModBlocks.CHEESE_BLOCK))
                         .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Items.ORANGE_DYE, 1)
+                        .input(ModBlocks.CHEESE_FLOWER)
+                                .criterion(hasItem(ModBlocks.CHEESE_FLOWER), conditionsFromItem(ModBlocks.CHEESE_FLOWER))
+                                        .offerTo(exporter);
 
                 createShaped(RecipeCategory.MISC, ModItems.CHEESE_PICKAXE, 1)
                         .pattern("CCC")

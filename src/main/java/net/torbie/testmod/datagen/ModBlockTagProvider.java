@@ -31,5 +31,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(Blocks.OBSIDIAN);
+
+
+        valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.CHEESE_WOOD_LOG)
+                .add(ModBlocks.CHEESE_WOOD_WOOD)
+                .add(ModBlocks.STRIPPED_CHEESE_WOOD_LOG)
+                .add(ModBlocks.STRIPPED_CHEESE_WOOD_WOOD);
+
+        valueLookupBuilder(BlockTags.FLOWERS)
+                .add(ModBlocks.CHEESE_FLOWER);
+        valueLookupBuilder(BlockTags.BEE_ATTRACTIVE)
+                .add(ModBlocks.CHEESE_FLOWER);
     }
 }

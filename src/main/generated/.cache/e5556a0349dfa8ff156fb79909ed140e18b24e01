@@ -1,4 +1,10 @@
 // 1.21.8	-999999999-01-01T00:00:00	Test Mod/Block Loot Tables
 46274418d01b2482b55c9fb072fad5fea8fc1bc0 data/testmod/loot_table/blocks/cheese_block.json
+cb4952cfb0896ed9bcd255fe55004eb9e5d9f052 data/testmod/loot_table/blocks/cheese_flower.json
 efc2fb10b3d8210901a1744989827651f0700b87 data/testmod/loot_table/blocks/cheese_ore.json
+bd7883d4a56d9300fce9cde6da404a72f62c2c4d data/testmod/loot_table/blocks/cheese_wood_leaves.json
+3d7bab64039a3e41ae657dc00d225b6bb607fca4 data/testmod/loot_table/blocks/cheese_wood_log.json
+0aab5b483f1b99e3718a60796d5d814aeb363087 data/testmod/loot_table/blocks/cheese_wood_wood.json
 60e4794e98c6b5d832a7c838a76e60eeee1ec050 data/testmod/loot_table/blocks/deepslate_cheese_ore.json
+bed2d13491ea969bb9121f0246fa56b4bbed8eb2 data/testmod/loot_table/blocks/stripped_cheese_wood_log.json
+1646a25e0518e71c3bd52dfeadf052a3d7f321f8 data/testmod/loot_table/blocks/stripped_cheese_wood_wood.json

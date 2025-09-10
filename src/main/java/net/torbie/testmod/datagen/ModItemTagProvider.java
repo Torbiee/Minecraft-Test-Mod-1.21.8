@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
+import net.torbie.testmod.block.ModBlocks;
 import net.torbie.testmod.item.ModItems;
 import net.torbie.testmod.util.ModTags;
 
@@ -40,6 +41,18 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.CHEESE_AXE);
         valueLookupBuilder(ItemTags.HOES)
                 .add(ModItems.CHEESE_HOE);
+// Blocks
 
+        valueLookupBuilder(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.CHEESE_WOOD_LOG.asItem())
+                .add(ModBlocks.CHEESE_WOOD_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_CHEESE_WOOD_LOG.asItem())
+                .add(ModBlocks.STRIPPED_CHEESE_WOOD_WOOD.asItem());
+
+        valueLookupBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.CHEESE_WOOD_PLANKS.asItem());
+
+        valueLookupBuilder(ItemTags.FLOWERS)
+                .add(ModBlocks.CHEESE_FLOWER.asItem());
     }
 }

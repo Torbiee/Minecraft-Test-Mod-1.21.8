@@ -30,6 +30,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CHEESE_BLOCK);
         addDrop(ModBlocks.CHEESE_ORE, oreDrops(ModBlocks.CHEESE_ORE, ModItems.RAW_CHEESE));
         addDrop(ModBlocks.DEEPSLATE_CHEESE_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_CHEESE_ORE, ModItems.RAW_CHEESE, 3, 7));
+
+        addDrop(ModBlocks.CHEESE_WOOD_LOG);
+        addDrop(ModBlocks.CHEESE_WOOD_WOOD);
+        addDrop(ModBlocks.STRIPPED_CHEESE_WOOD_LOG);
+        addDrop(ModBlocks.STRIPPED_CHEESE_WOOD_WOOD);
+        addDrop(ModBlocks.CHEESE_FLOWER);
+
+        addDrop(ModBlocks.CHEESE_WOOD_LEAVES, leavesDrops(ModBlocks.CHEESE_WOOD_LEAVES, ModBlocks.CHEESE_WOOD_SAPLING, 0.0625f));
     }
 
 

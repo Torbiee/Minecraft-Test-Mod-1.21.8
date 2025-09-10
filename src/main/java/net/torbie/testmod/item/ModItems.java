@@ -1,8 +1,6 @@
 package net.torbie.testmod.item;
 
-import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.component.type.ToolComponent;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -12,22 +10,16 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.torbie.testmod.TestMod;
 import net.torbie.testmod.armor.CheeseArmorMaterial;
-
-import java.util.List;
 import java.util.function.Function;
 
 
 public class ModItems {
 
-    public static void initialize() {
-    }
+    public static void initialize() {}
 
-    
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
 
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TestMod.MOD_ID, name));
@@ -40,6 +32,7 @@ public class ModItems {
 
         return item;
     }
+
 
 
     public static final Item RAW_CHEESE = register(
@@ -58,6 +51,8 @@ public class ModItems {
                     .nutrition(8)
                     .saturationModifier(0.6f)
                     .build()));
+
+
 
     public static final Item CHEESE_SWORD = register(
             "cheese_sword",
@@ -82,9 +77,6 @@ public class ModItems {
             "cheese_hoe",
     settings -> new HoeItem(ModToolMaterials.CHEESE, -3f, 0f, settings),
             new Item.Settings());
-
-
-
 
 
 

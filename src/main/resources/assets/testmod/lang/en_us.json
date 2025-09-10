@@ -14,5 +14,16 @@
   "item.testmod.cheese_ore": "Cheese Ore",
   "item.testmod.deepslate_cheese_ore": "Deepslate Cheese Ore",
   "itemGroup.cheese_items": "Cheese Items",
-  "itemGroup.cheese_blocks": "Cheese Blocks"
+  "itemGroup.cheese_blocks": "Cheese Blocks",
+  "item.testmod.cheese_lamp": "Cheese Lamp",
+
+  "item.testmod.cheese_wood_log": "Cheese Wood Log",
+  "item.testmod.cheese_wood_wood": "Cheese Wood",
+  "item.testmod.stripped_cheese_wood_log": "Stripped Cheese Wood Log",
+  "item.testmod.stripped_cheese_wood_wood": "Stripped Cheese Wood",
+  "item.testmod.cheese_wood_planks": "Cheese Wood Planks",
+  "item.testmod.cheese_wood_leaves": "Cheese Wood Leaves",
+  "item.testmod.cheese_wood_sapling": "Cheese Wood Sapling",
+
+  "item.testmod.cheese_flower": "Cheese Flower"
 }
