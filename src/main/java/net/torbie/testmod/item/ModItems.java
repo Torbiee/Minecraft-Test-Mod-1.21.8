@@ -1,10 +1,7 @@
 package net.torbie.testmod.item;
 
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -13,6 +10,8 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.torbie.testmod.TestMod;
 import net.torbie.testmod.armor.CheeseArmorMaterial;
+import net.torbie.testmod.entity.ModEntities;
+
 import java.util.function.Function;
 
 
@@ -51,6 +50,16 @@ public class ModItems {
                     .nutrition(8)
                     .saturationModifier(0.6f)
                     .build()));
+
+    public static final Item RAT_SPAWN_EGG = register(
+            "rat_spawn_egg",
+            settings ->  new SpawnEggItem(ModEntities.RAT, settings),
+            new Item.Settings());
+
+    public static final Item MOUSE_SPAWN_EGG = register(
+            "mouse_spawn_egg",
+            settings ->  new SpawnEggItem(ModEntities.MOUSE, settings),
+            new Item.Settings());
 
 
 

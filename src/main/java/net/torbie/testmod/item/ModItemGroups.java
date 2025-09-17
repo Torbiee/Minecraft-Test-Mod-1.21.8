@@ -32,6 +32,8 @@ public class ModItemGroups {
             itemGroup.add(ModItems.CHEESE_CHESTPLATE);
             itemGroup.add(ModItems.CHEESE_LEGGINGS);
             itemGroup.add(ModItems.CHEESE_BOOTS);
+            itemGroup.add(ModItems.RAT_SPAWN_EGG);
+            itemGroup.add(ModItems.MOUSE_SPAWN_EGG);
         });
 
         // Registering Custom Block Group

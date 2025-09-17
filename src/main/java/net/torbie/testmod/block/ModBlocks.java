@@ -2,8 +2,6 @@ package net.torbie.testmod.block;
 
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -132,11 +130,8 @@ public class ModBlocks {
 
     public static final Block CHEESE_FLOWER = registerBlock(
             "cheese_flower",
-//            CheeseFlowerBlock::new,
-//            AbstractBlock.Settings.copy(Blocks.POPPY), true);
             settings -> new CheeseFlowerBlock(HASTE, 5.0f, settings), AbstractBlock.Settings.copy(Blocks.POPPY), true);
-//            settings -> new FlowerBlock(StatusEffects.HASTE, 5.0f, settings),
-//            AbstractBlock.Settings.copy(Blocks.POPPY), true);
+
 
     public static final Block POTTED_CHEESE_FLOWER = registerBlock(
             "potted_cheese_flower",

@@ -8,10 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "testmod:cheese_flower",
-              "Properties": {
-                "age": "0"
-              }
+              "Name": "testmod:cheese_flower"
             }
           }
         }

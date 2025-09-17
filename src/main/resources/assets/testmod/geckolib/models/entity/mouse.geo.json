@@ -1,0 +1,116 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "Mouse",
+					"pivot": [0, 3, 0],
+					"rotation": [0, 180, 0]
+				},
+				{
+					"name": "Head",
+					"parent": "Mouse",
+					"pivot": [0.00287, 9.15143, 1.00774],
+					"rotation": [0, 0.49982, 0],
+					"cubes": [
+						{"origin": [-2.99713, 10.15143, -1.99226], "size": [6, 5, 6], "uv": [0, 13]}
+					]
+				},
+				{
+					"name": "Nose",
+					"parent": "Head",
+					"pivot": [0.00287, 11.15143, 4.00774],
+					"cubes": [
+						{"origin": [-0.99713, 11.15143, 4.00774], "size": [2, 1, 1], "uv": [16, 24]},
+						{"origin": [-0.99713, 11.15143, 5.00774], "size": [2, 1, 1], "uv": [24, 18]}
+					]
+				},
+				{
+					"name": "RightEar",
+					"parent": "Head",
+					"pivot": [-0.99713, 15.15143, 1.00774],
+					"cubes": [
+						{"origin": [-4.93285, 15.08916, 1.00774], "size": [3, 3, 1], "uv": [24, 0]}
+					]
+				},
+				{
+					"name": "LeftEar",
+					"parent": "Head",
+					"pivot": [1.00287, 15.15143, 1.00774],
+					"cubes": [
+						{"origin": [2.00287, 15.17857, 1.03451], "size": [3, 3, 1], "uv": [24, 4]}
+					]
+				},
+				{
+					"name": "Neck",
+					"parent": "Mouse",
+					"pivot": [0.00287, 8.15143, 1.00774],
+					"cubes": [
+						{"origin": [-1.99713, 9.15143, -0.99226], "size": [4, 1, 4], "uv": [0, 24]}
+					]
+				},
+				{
+					"name": "LeftLeg",
+					"parent": "Mouse",
+					"pivot": [1.00287, 3.15143, 1.00774],
+					"rotation": [4.99819, 0, 0],
+					"cubes": [
+						{"origin": [1.00287, 0.15658, 0.41122], "size": [1, 3, 1], "uv": [24, 20]}
+					]
+				},
+				{
+					"name": "RightLeg",
+					"parent": "Mouse",
+					"pivot": [-1.99713, 2.15143, 1.00774],
+					"rotation": [-4.99819, 0, 0],
+					"cubes": [
+						{"origin": [-1.99713, 0.15658, 0.41122], "size": [1, 3, 1], "uv": [24, 20]}
+					]
+				},
+				{
+					"name": "LeftArm",
+					"parent": "Mouse",
+					"pivot": [3.00287, 7.15143, 1.00774],
+					"rotation": [-2.49909, 0, 0],
+					"cubes": [
+						{"origin": [3.00287, 3.15166, 1.00606], "size": [1, 4, 1], "uv": [24, 8]}
+					]
+				},
+				{
+					"name": "Body",
+					"parent": "Mouse",
+					"pivot": [0.00287, 4.15143, 1.00774],
+					"cubes": [
+						{"origin": [-2.99713, 2.15143, -1.99226], "size": [6, 7, 6], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "RightArm",
+					"parent": "Mouse",
+					"pivot": [-3.99713, 7.15143, 1.00774],
+					"rotation": [2.49909, 0, 0],
+					"cubes": [
+						{"origin": [-3.99713, 3.15168, 1.03819], "size": [1, 4, 1], "uv": [24, 13]}
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "Mouse",
+					"pivot": [0.00287, 3.15143, -1.99226],
+					"cubes": [
+						{"origin": [-0.46525, 3.15143, -1.06843], "size": [1, 4, 1], "pivot": [0.53475, 3.15143, -1.06843], "rotation": [120, -22.5, 22.5], "uv": [1, 1]}
+					]
+				}
+			]
+		}
+	]
+}

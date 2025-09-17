@@ -2,10 +2,14 @@ package net.torbie.testmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.FireBlock;
 import net.torbie.testmod.block.ModBlocks;
+import net.torbie.testmod.entity.ModEntities;
+import net.torbie.testmod.entity.custom.MouseEntity;
+import net.torbie.testmod.entity.custom.RatEntity;
 import net.torbie.testmod.item.ModItemGroups;
 import net.torbie.testmod.item.ModItems;
 import net.torbie.testmod.world.gen.ModWorldGeneration;
@@ -22,6 +26,7 @@ public class TestMod implements ModInitializer {
         ModBlocks.initialize();
         ModItemGroups.initialize();
         ModWorldGeneration.generateModWorldGen();
+        ModEntities.initialize();
 
 
         StrippableBlockRegistry.register(ModBlocks.CHEESE_WOOD_LOG, ModBlocks.STRIPPED_CHEESE_WOOD_LOG);
@@ -33,6 +38,9 @@ public class TestMod implements ModInitializer {
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_CHEESE_WOOD_WOOD,5,5);
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.CHEESE_WOOD_PLANKS, 5,20);
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.CHEESE_WOOD_LEAVES,30,60);
+
+        FabricDefaultAttributeRegistry.register(ModEntities.RAT, RatEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.MOUSE, MouseEntity.createAttributes());
 
 	}
 

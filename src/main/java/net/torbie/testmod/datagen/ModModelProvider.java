@@ -53,6 +53,8 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.RAW_CHEESE, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHEESE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RAT_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MOUSE_SPAWN_EGG, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CHEESE_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.CHEESE_PICKAXE, Models.HANDHELD);

@@ -25,5 +25,11 @@
   "item.testmod.cheese_wood_leaves": "Cheese Wood Leaves",
   "item.testmod.cheese_wood_sapling": "Cheese Wood Sapling",
 
-  "item.testmod.cheese_flower": "Cheese Flower"
+  "item.testmod.cheese_flower": "Cheese Flower",
+
+  "item.testmod.rat_spawn_egg": "Rat Spawn Egg",
+  "item.testmod.mouse_spawn_egg": "Mouse Spawn Egg",
+
+  "entity.testmod.rat": "Rat",
+  "entity.testmod.mouse": "Mouse"
 }
