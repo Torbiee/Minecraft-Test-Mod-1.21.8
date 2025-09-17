@@ -20,7 +20,7 @@ public class ModEntities {
             Registries.ENTITY_TYPE,
             Identifier.of(TestMod.MOD_ID, "rat"),
             EntityType.Builder.create(RatEntity::new, SpawnGroup.CREATURE)
-                    .dimensions(1f, 1f)
+                    .dimensions(0.5f, 0.5f)
                     .build(RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(TestMod.MOD_ID, "rat"))));
 
     public static final EntityType<MouseEntity> MOUSE = Registry.register(

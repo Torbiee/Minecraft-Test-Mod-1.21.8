@@ -19,7 +19,7 @@ public class TestModClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(ModBlocks.CHEESE_WOOD_SAPLING, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.CHEESE_FLOWER, BlockRenderLayer.CUTOUT);
 
-        EntityModelLayerRegistry.registerModelLayer(RatModel.RAT, RatModel::getTexturedModelData);
+
         EntityRendererRegistry.register(ModEntities.RAT, RatRenderer::new);
 
 

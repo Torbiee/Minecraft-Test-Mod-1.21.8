@@ -1,17 +1,35 @@
 package net.torbie.testmod.entity.client;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.minecraft.client.render.entity.state.LivingEntityRenderState;
-import net.minecraft.entity.AnimationState;
-import net.minecraft.item.ItemStack;
-import net.torbie.testmod.entity.custom.RatVariant;
+import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.constant.dataticket.DataTicket;
+import software.bernie.geckolib.renderer.base.GeoRenderState;
 
-@Environment(EnvType.CLIENT)
-public class RatRenderState extends LivingEntityRenderState {
-    //public RatVariant color = RatVariant.DEFAULT;
-    public RatVariant variant;
-    public final AnimationState walkingAnimationState = new AnimationState();
-    public final AnimationState idlingAnimationState = new AnimationState();
+import java.util.Map;
+
+public class RatRenderState extends LivingEntityRenderState implements GeoRenderState {
+    private final Map<DataTicket<?>, Object> geckoData = new Reference2ObjectOpenHashMap<>();
+
+    @Override
+    public <D> void addGeckolibData(DataTicket<D> dataTicket, @Nullable D data) {
+        geckoData.put(dataTicket, data);
+    }
+
+    @Override
+    public boolean hasGeckolibData(DataTicket<?> dataTicket) {
+        return geckoData.containsKey(dataTicket);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public <D> D getGeckolibData(DataTicket<D> dataTicket) {
+        return (D) geckoData.get(dataTicket);
+    }
+
+    @Override
+    public Map<DataTicket<?>, Object> getDataMap() {
+        return geckoData;
+    }
 }
 
